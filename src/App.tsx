@@ -6,12 +6,14 @@ import { StrombergQuotes } from "./components/Stromberg";
 
 function App() {
   return (
-    <div className="h-screen w-screen bg-gradient-to-b from-purple-400 to-pink-400 overflow-hidden">
-      <Header />
-      <Preview />
-      <Properties />
-      <StrombergQuotes />
-    </div>
+      <div className="bg-gradient-to-b from-purple-400 to-pink-400 bg-repeat-y overflow-auto">
+        <div className="h-screen w-screen">
+          <Header />
+          <Preview />
+          <Properties />
+          <StrombergQuotes />
+        </div>
+      </div>
   );
 }
 
