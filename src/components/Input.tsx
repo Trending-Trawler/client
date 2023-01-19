@@ -8,7 +8,7 @@ function Input({ label }: { label: string }) {
         </p>
         <input
           type="text"
-          className="mt-0.5 rounded border border-black drop-shadow-xl text-sm py-0.5 px-1"
+          className=" w-80 mt-0.5 rounded border border-black drop-shadow-xl text-sm py-0.5 px-1"
         />
       </div>
     </>
