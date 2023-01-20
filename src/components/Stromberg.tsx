@@ -16,7 +16,7 @@ function StrombergQuotes() {
   return (
     <div className="mx-auto pt-5 w-1/2 flex flex-col justify-center text-white font-semibold">
       <h1 className="flex-1 text-center">"{quote}"</h1>
-      <h2 className="pt-1 flex-1 text-right">-{name}</h2>
+      <h2 className="pt-1 flex-1 text-center">-{name}</h2>
     </div>
   );
 }
