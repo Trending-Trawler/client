@@ -1,19 +1,21 @@
 import "./App.css";
-import { Header } from "./components/Header";
-import { Preview } from "./components/Preview";
 import { Properties } from "./components/Properties";
-import { StrombergQuotes } from "./components/Stromberg";
+import { Navbar } from "./components/Navbar";
 
 function App() {
   return (
-      <div className="bg-gradient-to-b from-purple-400 to-pink-400 bg-repeat-y overflow-auto">
-        <div className="h-screen w-screen">
-          <Header />
-          <Preview />
-          <Properties />
-          <StrombergQuotes />
-        </div>
+    <div className="bg-gradient-to-b from-purple-400 to-pink-400 bg-repeat-y">
+      <div className="sticky top-0 z-50 backdrop-filter backdrop-blur-sm transition-all duration-500">
+        <Navbar />
       </div>
+      <Properties />
+      <Properties />
+      <Properties />
+      <Properties />
+      <Properties />
+      <Properties />
+      <Properties />
+    </div>
   );
 }
 
