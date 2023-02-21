@@ -10,6 +10,9 @@ module.exports = {
       aspectRatio: {
         '9/16': '9 / 16',
       },
+      colors: {
+        'btn-orange': '#FF8447'
+      },
     },
   },
   plugins: [],
