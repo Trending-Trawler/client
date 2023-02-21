@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="">
+    <div className="text-white">
       <div className="px-10 py-4 flex flex-row items-center justify-between">
         <div className="flex flex-row items-center">
           <img
@@ -13,7 +13,7 @@ function Navbar() {
           />
           <h1 className="text-3xl font-bold pl-5">Trending Trawler</h1>
         </div>
-        <nav className="">
+        <nav className="font-semibold">
           <Link className="mr-5" to={"/about"}>
             About
           </Link>
