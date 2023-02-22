@@ -3,6 +3,7 @@ import { Properties } from "./components/Properties";
 import { Navbar } from "./components/Navbar";
 import { Thread } from "./components/Thread";
 import { TextToSpeech } from "./components/TextToSpeech";
+import { Download } from "./components/Download";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </div>
       <Thread />
       <TextToSpeech />
+      <Download />
       <Properties />
       <Properties />
       <Properties />
