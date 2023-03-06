@@ -19,10 +19,10 @@ function TextToSpeech() {
             <h1 className="text-2xl font-bold text-center">Pick a Voice</h1>
             <div className="flex flex-row pt-2">
               <div className="flex-auto text-left ml-4 sm:ml-16 lg:ml-20 xl:ml-64 2xl:ml-80">
-                <button onClick={(e) => setVoice("Male")} className="lg:w-52 sm:w-36 w-24 h-12 hover:bg-slate-500/40 active:bg-slate-500/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 xl:px-4 px-2 drop-shadow-xl"><div className="text-base font-bold">Male</div></button>
+                <button onClick={(e) => setVoice("Male")} className="lg:w-52 sm:w-36 w-24 h-12 hover:bg-slate-500/40 active:bg-slate-700/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 xl:px-4 px-2 drop-shadow-xl"><div className="text-base font-bold">Male</div></button>
               </div>
               <div className="flex-auto text-right mr-4 sm:mr-16 lg:mr-20 xl:mr-64 2xl:mr-80">
-                <button onClick={(e) => setVoice("Female")} className="lg:w-52 sm:w-36 w-24 h-12 hover:bg-slate-500/40 active:bg-slate-500/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 xl:px-4 px-2 drop-shadow-xl"><div className="text-base font-bold">Female</div></button>
+                <button onClick={(e) => setVoice("Female")} className="lg:w-52 sm:w-36 w-24 h-12 hover:bg-slate-500/40 active:bg-slate-700/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 xl:px-4 px-2 drop-shadow-xl"><div className="text-base font-bold">Female</div></button>
               </div>
             </div>
             <div className="mt-2">
@@ -31,13 +31,13 @@ function TextToSpeech() {
             <h1 className="text-2xl font-bold text-center mt-10">Pick a Language</h1>
             <div className="flex flex-row pt-2">
               <div className="flex-auto text-left ml-4 sm:ml-16 lg:ml-20 xl:ml-64 2xl:ml-80">
-                <button onClick={(e) => setLanguage("English")} className="lg:w-52 sm:w-36 w-24 h-12 hover:bg-slate-500/40 active:bg-slate-500/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 xl:px-4 px-2 drop-shadow-xl"><div className="text-base font-bold">English</div></button>
+                <button onClick={(e) => setLanguage("English")} className="lg:w-52 sm:w-36 w-24 h-12 hover:bg-slate-500/40 active:bg-slate-700/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 xl:px-4 px-2 drop-shadow-xl"><div className="text-base font-bold">English</div></button>
               </div>
               <div className="flex-auto text-center">
-                <button onClick={(e) => setLanguage("German")} className="lg:w-52 sm:w-36 w-24 h-12 hover:bg-slate-500/40 active:bg-slate-500/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 xl:px-4 px-2 drop-shadow-xl"><div className="text-base font-bold">German</div></button>
+                <button onClick={(e) => setLanguage("German")} className="lg:w-52 sm:w-36 w-24 h-12 hover:bg-slate-500/40 active:bg-slate-700/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 xl:px-4 px-2 drop-shadow-xl"><div className="text-base font-bold">German</div></button>
               </div>
               <div className="flex-auto text-right mr-4 sm:mr-16 lg:mr-20 xl:mr-64 2xl:mr-80">
-                <button onClick={(e) => setLanguage("French")} className="lg:w-52 sm:w-36 w-24 h-12 hover:bg-slate-500/40 active:bg-slate-500/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 xl:px-4 px-2 drop-shadow-xl"><div className="text-base font-bold">French</div></button>
+                <button onClick={(e) => setLanguage("French")} className="lg:w-52 sm:w-36 w-24 h-12 hover:bg-slate-500/40 active:bg-slate-700/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 xl:px-4 px-2 drop-shadow-xl"><div className="text-base font-bold">French</div></button>
               </div>
             </div>
             <div className="mt-2">
