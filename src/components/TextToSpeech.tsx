@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function TextToSpeech() {
   const [readingSpeed, setReadingSpeed] = useState<string>("50");
@@ -8,6 +8,18 @@ function TextToSpeech() {
   console.log(readingSpeed);
   console.log(voice);
 
+  /*let voices = {};
+
+  voices = getData("http://localhost:8000/");
+  console.log(voices);*/
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => response.json())
+    .then(res => console.log(res))
+  }, [])
+
+ 
   return (
     <>
       <div className="flex flex-row items-center text-white mt-2">
