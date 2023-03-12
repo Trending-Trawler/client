@@ -1,11 +1,10 @@
 #Stage 1
 FROM node:18-alpine as builder
 WORKDIR /app
-COPY package.json .
+COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
-EXPOSE 3000
-RUN npm run bild
+RUN npm run build
 
 #Stage 2
 FROM nginx:1.21.3-alpine
