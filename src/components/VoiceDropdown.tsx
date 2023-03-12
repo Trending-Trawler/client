@@ -10,7 +10,7 @@ export default function VoiceDropdown() {
     const [voices, setVoices] = useState<any[]>();
     const [selectedGender, setSelectedGender] = useState<string>("male");
     const [selectedLang, setSelectedLang] = useState<string>("American");
-    const [selectedVoice, setSelectedVoice] = useState<string>("");
+    const [selectedVoice, setSelectedVoice] = useState<string>("Mike");
 
     useEffect(() => {
         fetch('https://api.trending-trawler.com/voices', {
@@ -46,50 +46,27 @@ export default function VoiceDropdown() {
                     <Menu.Items
                         className="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
-                            <Menu.Item>
-                                {({active}) => (
-                                    <div className="relative">
-                                        <a
-                                            href="#"
-                                            className={classNames(
-                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                'block px-4 py-2 text-sm'
-                                            )}
-                                            onClick={() => setSelectedGender("male")}
-                                        >
-                                            Male
-                                        </a>
-                                    </div>
-                                )}
-                            </Menu.Item>
-                            <Menu.Item>
-                                {({active}) => (
-                                    <a
-                                        href="#"
-                                        className={classNames(
-                                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                            'block px-4 py-2 text-sm'
+                            {voices &&
+                                Object.keys(voices).map((key) => (
+                                    <Menu.Item key={key}>
+                                        {({ active }) => (
+                                            <div className="relative">
+                                                <a
+                                                    href="#"
+                                                    className={classNames(
+                                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                                        'block px-4 py-2 text-sm'
+                                                    )}
+                                                    onClick={() => setSelectedGender(key)}
+                                                >
+                                                    {key.charAt(0).toUpperCase() + key.slice(1)}
+                                                </a>
+                                            </div>
                                         )}
-                                        onClick={() => setSelectedGender("female")}
-                                    >
-                                        Female
-                                    </a>
-                                )}
-                            </Menu.Item>
-                            <Menu.Item>
-                                {({active}) => (
-                                    <a
-                                        href="#"
-                                        className={classNames(
-                                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                            'block px-4 py-2 text-sm'
-                                        )}
-                                        onClick={() => setSelectedGender("Disney")}
-                                    >
-                                        Disney
-                                    </a>
-                                )}
-                            </Menu.Item>
+                                    </Menu.Item>
+                                ))
+                            }
+
                         </div>
                     </Menu.Items>
                 </Transition>
@@ -116,46 +93,28 @@ export default function VoiceDropdown() {
                     <Menu.Items
                         className="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
-                            {selectedGender === "male" && (
-                                voices?.male.map((data: any) => (
-                                    <Menu.Item>
-                                        {({active}) => (
-                                            <div className="relative">
-                                                <a
-                                                    href="#"
-                                                    className={classNames(
-                                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                        'block px-4 py-2 text-sm'
-                                                    )}
-                                                    onClick={() => setSelectedLang(data.lang)}
-                                                >
-                                                    {data.lang}
-                                                </a>
-                                            </div>
-                                        )}
-                                    </Menu.Item>
-                                ))
-                                )}
-                            {selectedGender === "female" && (
-                                voices?.female.map((data: any) => (
-                                    <Menu.Item>
-                                        {({active}) => (
-                                            <div className="relative">
-                                                <a
-                                                    href="#"
-                                                    className={classNames(
-                                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                        'block px-4 py-2 text-sm'
-                                                    )}
-                                                    onClick={() => setSelectedLang(data.lang)}
-                                                >
-                                                    {data.lang}
-                                                </a>
-                                            </div>
-                                        )}
-                                    </Menu.Item>
-                                ))
-                            )}
+                            {selectedGender && voices &&
+                                voices[selectedGender as unknown as number].map((obj: {}) =>
+                                    Object.keys(obj).map((key) => (
+                                        <Menu.Item key={key}>
+                                            {({ active }) => (
+                                                <div className="relative">
+                                                    <a
+                                                        href="#"
+                                                        className={classNames(
+                                                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                                            'block px-4 py-2 text-sm'
+                                                        )}
+                                                        onClick={() => setSelectedLang(key)}
+                                                    >
+                                                        {key.charAt(0).toUpperCase() + key.slice(1)}
+                                                    </a>
+                                                </div>
+                                            )}
+                                        </Menu.Item>
+                                    ))
+                                )
+                            }
                         </div>
                     </Menu.Items>
                 </Transition>
@@ -182,12 +141,10 @@ export default function VoiceDropdown() {
                     <Menu.Items
                         className="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
-                            {
-                                voices && voices?.female.map((data: any) => (
-                                    data.voices.map((voice: any) => (
-                                        console.log(voice.name),
-                                    <Menu.Item>
-                                        {({active}) => (
+                            {selectedGender && selectedLang && voices && voices[selectedGender as unknown as number] && voices[selectedGender as unknown as number].map((obj: { [x: string]: any[]; }) => (
+                                obj[selectedLang] && obj[selectedLang].map((item) => (
+                                    <Menu.Item key={item.id}>
+                                        {({ active }) => (
                                             <div className="relative">
                                                 <a
                                                     href="#"
@@ -195,16 +152,15 @@ export default function VoiceDropdown() {
                                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                         'block px-4 py-2 text-sm'
                                                     )}
-                                                    onClick={() => setSelectedVoice(voice.name)}
+                                                    onClick={() => setSelectedVoice(item.name)}
                                                 >
-                                                    {voice.name}
+                                                    {item.name}
                                                 </a>
                                             </div>
                                         )}
                                     </Menu.Item>
-                                    ))
                                 ))
-                            }
+                            ))}
                         </div>
                     </Menu.Items>
                 </Transition>
