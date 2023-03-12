@@ -22,14 +22,13 @@ export default function VoiceDropdown() {
             .catch(error => console.log(error))
     }, []);
 
-    console.log(voices);
     return (
         <>
             <Menu as="div" className="relative inline-block text-left">
                 <div>
                     <Menu.Button
-                        className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                        {selectedGender}
+                        className="inline-flex w-11/12 justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                        {selectedGender.charAt(0).toUpperCase() + selectedGender.slice(1)}
                         <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true"/>
                     </Menu.Button>
                 </div>
@@ -75,7 +74,7 @@ export default function VoiceDropdown() {
             <Menu as="div" className="relative inline-block text-left">
                 <div>
                     <Menu.Button
-                        className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                        className="inline-flex w-11/12 justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                         {selectedLang}
                         <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true"/>
                     </Menu.Button>
@@ -123,7 +122,7 @@ export default function VoiceDropdown() {
             <Menu as="div" className="relative inline-block text-left">
                 <div>
                     <Menu.Button
-                        className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                        className="inline-flex w-11/12 justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                         {selectedVoice}
                         <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true"/>
                     </Menu.Button>
