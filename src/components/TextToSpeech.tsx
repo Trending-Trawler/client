@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 
 function TextToSpeech() {
@@ -9,7 +10,7 @@ function TextToSpeech() {
   console.log(voice);
 
   return (
-    <>
+    <div>
       <div className="flex flex-row items-center text-white mt-2">
         <div className="container rounded-lg pb-10 sm:mx-auto mx-3 backdrop-filter bg-slate-50/10 backdrop-blur-sm">
           <div className="pb-6 pt-6 font-bold text-center">
@@ -55,7 +56,7 @@ function TextToSpeech() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
