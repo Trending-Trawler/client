@@ -81,6 +81,7 @@ function GalleryView({ videos }: GalleryViewProps) {
           prevEl: ".swiper-button-prev"
         }}
         mousewheel={true}
+
         modules={[EffectCoverflow, Navigation, Mousewheel, Pagination]}
 
         onSlideChangeTransitionEnd={handleSlideChange}

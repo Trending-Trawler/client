@@ -29,17 +29,6 @@ function Thread() {
             Submit
           </button>
         </div>
-        <div>
-          <div>
-            <p>The title of the first reddit thread will be displayed here</p>
-          </div>
-          <div>
-            <p>The title of the second reddit thread will be displayed here</p>
-          </div>
-          <div>
-            <p>The title of the third reddit thread will be displayed here</p>
-          </div>
-        </div>
       </div>
     </>
   );
