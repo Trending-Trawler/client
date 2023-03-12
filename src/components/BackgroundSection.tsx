@@ -8,14 +8,13 @@ function BackgroundSection() {
 
   async function fetchVideos() {
     try {
-      const response = await fetch("https://api.trending-trawler.com/video/preview", {
+      const response = await fetch("https://api.trending-trawler.com/videos/preview", {
         method: "GET",
         mode: "cors"
       });
 
       const arrayBuffer = await response.arrayBuffer();
       const zip = await JSZip.loadAsync(arrayBuffer);
-      let videoId = 0;
 
       const updatedVideos = await Promise.all(
         Object.keys(zip.files).map(async (filename) => {
@@ -23,46 +22,46 @@ function BackgroundSection() {
           if (file.name.endsWith(".mp4")) {
             const videoBlob = await file.async("blob");
             const videoUrl = URL.createObjectURL(videoBlob);
-            return { id: videoId++, src: videoUrl };
+            return {name: filename.split(".")[0], src: videoUrl };
           }
           return null;
         })
-      ).then((results: any[]) => results.filter((video) => video !== null));
+      ).then((results: any[]) => results.filter((video) => video !== null))
 
       setVideos(updatedVideos);
 
-      console.log("fetching videos successfull");
+      console.log("fetching videos successful");
+      console.log("videos:", videos);
     } catch (error) {
       console.error("Error fetching or extracting videos:", error);
       setVideos([
         {
-          id: 0,
+          name: "video0",
           src: "videos/video0.mp4"
         },
         {
-          id: 1,
+          name: "video1",
           src: "videos/video1.mp4"
         },
         {
-          id: 2,
+          name: "video2",
           src: "videos/video2.mp4"
         },
         {
-          id: 3,
+          name: "video3",
           src: "videos/video3.mp4"
         },
         {
-          id: 4,
+          name: "video4",
           src: "videos/video4.mp4"
         },
         {
-          id: 5,
+          name: "video5",
           src: "videos/video5.mp4"
         },
         {
-          id: 6,
+          name: "video6",
           src: "videos/video3.mp4"
-
         }]);
     }
   }

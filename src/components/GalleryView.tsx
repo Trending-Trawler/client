@@ -88,19 +88,19 @@ function GalleryView({ videos }: GalleryViewProps) {
         onClick={handleVideoClick}
       >
         {videos.map((video, index) => (
-          <SwiperSlide key={video.id} className="w-1/2 sm:w-auto md:w-full lg:w-32">
-            <video id={`video_${video.id}`}
+          <SwiperSlide key={video.name} className="w-1/2 sm:w-auto md:w-full lg:w-32">
+            <video id={`video_${video.name}`}
                    className="flex justify-center align-middle rounded-xl border-solid border border-grey-400"
                    ref={el => (videoRefs.current[index] = el)}
-                   loop
                    muted
+                   loop
             >
               <source src={video.src} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </SwiperSlide>
         ))}
-        <div className="slider-controler">
+        <div className="slider-controller">
           <div className="swiper-button-prev slider-arrow">
           </div>
           <div className="swiper-button-next slider-arrow">
