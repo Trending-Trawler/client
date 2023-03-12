@@ -1,0 +1,132 @@
+[
+{
+    "random": "Random",
+    "male": [
+    {
+        "lang": "American",
+        "voices": [
+        { "id": "en_us_006", "name": "Mike" },
+        { "id": "en_us_007", "name": "Paul" },
+        { "id": "en_us_009", "name": "Tom" },
+        { "id": "en_us_010", "name": "Will" }
+        ]
+    },
+    {
+        "lang": "UK",
+        "voices": [
+        { "id": "en_uk_001", "name": "Harry" },
+        { "id": "en_uk_003", "name": "Oliver" }
+        ]
+    },
+    {
+        "lang": "Australian",
+        "voices": [{ "id": "en_au_002", "name": "Tom" }]
+    },
+    {
+        "lang": "German",
+        "voices": [{ "id": "de_002", "name": "Hans" }]
+    },
+    {
+        "lang": "French",
+        "voices": [
+        { "id": "fr_001", "name": "Pierre" },
+        { "id": "fr_002", "name": "Jean" }
+        ]
+    },
+    {
+        "lang": "Spanish",
+        "voices": [{ "id": "es_002", "name": "Juan" }]
+    },
+    {
+        "lang": "Mexican Spanish",
+        "voices": [{ "id": "es_mx_002", "name": "Juan" }]
+    },
+    {
+        "lang": "Brazilian Portuguese",
+        "voices": [{ "id": "br_005", "name": "João" }]
+    },
+    {
+        "lang": "Japanese",
+        "voices": [{ "id": "jp_006", "name": "Taro" }]
+    },
+    {
+        "lang": "Korean",
+        "voices": [
+        { "id": "kr_002", "name": "Jong" },
+        { "id": "kr_004", "name": "Sung" }
+        ]
+    },
+    {
+        "lang": "Indonesian",
+        "voices": []
+    }
+    ],
+    "female": [
+    {
+        "lang": "American",
+        "voices": [
+        { "id": "en_us_001", "name": "Alice" },
+        { "id": "en_us_002", "name": "Hannah" }
+        ]
+    },
+    {
+        "lang": "UK",
+        "voices": []
+    },
+    {
+        "lang": "Australian",
+        "voices": [{ "id": "en_au_002", "name": "Lucia" }]
+    },
+    {
+        "lang": "German",
+        "voices": [{ "id": "de_001", "name": "Hannah" }]
+    },
+    {
+        "lang": "French",
+        "voices": []
+    },
+    {
+        "lang": "Spanish",
+        "voices": []
+    },
+    {
+        "lang": "Mexican Spanish",
+        "voices": []
+    },
+    {
+        "lang": "Brazilian Portuguese",
+        "voices": [
+        { "id": "br_001", "name": "Ana" },
+        { "id": "br_003", "name": "Maria" },
+        { "id": "br_004", "name": "Paula" }
+        ]
+    },
+    {
+        "lang": "Japanese",
+        "voices": [
+        { "id": "jp_001", "name": "Mai" },
+        { "id": "jp_003", "name": "Saki" },
+        { "id": "jp_005", "name": "Yumi" }
+        ]
+    },
+    {
+        "lang": "Korean",
+        "voices": [{ "id": "kr_003", "name": "Soo" }]
+    },
+    {
+        "lang": "Indonesian",
+        "voices": [{ "id": "id_001", "name": "Siti" }]
+    }
+    ],
+    "disney": [
+    { "id": "en_us_ghostface", "name": "Ghostface" },
+    { "id": "en_us_chewbacca", "name": "Chewbacca" },
+    { "id": "en_us_c3po", "name": "C3PO" },
+    { "id": "en_us_stitch", "name": "Stitch" },
+    { "id": "en_us_stormtrooper", "name": "Stormtrooper" },
+    { "id": "en_us_rocket", "name": "Rocket" },
+    { "id": "en_male_pirate", "name": "Pirate" },
+    { "id": "en_female_madam_leota", "name": "Madame Leota" }
+    ]
+}
+]
