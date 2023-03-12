@@ -92,7 +92,7 @@ function GalleryView({ videos }: GalleryViewProps) {
         }}
 
         mousewheel={true}
-        modules={[EffectCoverflow, Pagination, Navigation, Mousewheel]}
+        modules={[EffectCoverflow, Navigation, Mousewheel]}
 
         onSlideChangeTransitionEnd={handleSlideChange}
         onClick={handleVideoClick}
