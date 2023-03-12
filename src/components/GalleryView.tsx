@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { EffectCoverflow, Mousewheel, Navigation, Pagination } from "swiper";
 
 interface GalleryViewProps {
-  videos: Video[];
+  videos: any[];
 }
 
 function GalleryView({ videos }: GalleryViewProps) {
