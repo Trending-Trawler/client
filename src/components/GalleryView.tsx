@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { EffectCoverflow, Mousewheel, Navigation, Pagination } from "swiper";
 
 interface GalleryViewProps {
-  videos: any[];
+  videos: Video[];
 }
 
 function GalleryView({ videos }: GalleryViewProps) {
@@ -36,24 +36,18 @@ function GalleryView({ videos }: GalleryViewProps) {
     await Promise.race([nextPromise, prevPromise]);
 
     if (videoRefs.current[currentIndex] && videoRefs.current[currentIndex]?.paused) {
-      {
-        // @ts-ignore
-        videoRefs.current[currentIndex].play();
-      }
+      // @ts-ignore
+      videoRefs.current[currentIndex].play();
     }
     if (swipeDirectionForward) {
       if (videoRefs.current[swiper.realIndex] && !videoRefs.current[swiper.realIndex]?.paused) {
-        {
-          // @ts-ignore
-          videoRefs.current[swiper.realIndex]?.pause();
-        }
+        // @ts-ignore
+        videoRefs.current[swiper.realIndex]?.pause();
       }
     } else if (!swipeDirectionForward) {
       if (videoRefs && videoRefs.current[previousIndex] && !videoRefs.current[previousIndex]?.paused) {
-        {
-          // @ts-ignore
-          videoRefs.current[previousIndex]?.pause();
-        }
+        // @ts-ignore
+        videoRefs.current[previousIndex]?.pause();
       }
     }
   };
@@ -62,15 +56,11 @@ function GalleryView({ videos }: GalleryViewProps) {
     const currentIndex = (swiper.realIndex + 1) % videoRefs.current.length;
 
     if (videoRefs.current[currentIndex] && videoRefs.current[currentIndex]?.paused) {
-      {
-        // @ts-ignore
-        videoRefs.current[currentIndex].play();
-      }
+      // @ts-ignore
+      videoRefs.current[currentIndex].play();
     } else if (videoRefs.current[currentIndex] && !videoRefs.current[currentIndex]?.paused) {
-      {
-        // @ts-ignore
-        videoRefs.current[currentIndex].pause();
-      }
+      // @ts-ignore
+      videoRefs.current[currentIndex].pause();
     }
   };
 
@@ -90,14 +80,12 @@ function GalleryView({ videos }: GalleryViewProps) {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"
         }}
-
         mousewheel={true}
-        modules={[EffectCoverflow, Pagination, Navigation, Mousewheel]}
+        modules={[EffectCoverflow, Navigation, Mousewheel, Pagination]}
 
         onSlideChangeTransitionEnd={handleSlideChange}
         onClick={handleVideoClick}
       >
-
         {videos.map((video, index) => (
           <SwiperSlide key={video.id} className="w-1/2 sm:w-auto md:w-full lg:w-32">
             <video id={`video_${video.id}`}

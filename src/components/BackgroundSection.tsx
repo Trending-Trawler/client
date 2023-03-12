@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 function BackgroundSection() {
 
-  const [videos, setVideos] = useState<any[]>([]);
+  const [videos, setVideos] = useState<Video[]>([]);
 
   async function fetchVideos() {
     try {
@@ -68,7 +68,9 @@ function BackgroundSection() {
   }
 
   useEffect(() => {
+  if(videos.length === 0){
     fetchVideos();
+  }
   }, []);
 
   console.log("videos:", videos);
