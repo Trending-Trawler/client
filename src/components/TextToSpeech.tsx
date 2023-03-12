@@ -15,15 +15,12 @@ function TextToSpeech() {
               <div className="grid grid-cols-2 px-3">
                 <h2 className="col-span-2 text-xl">Pick a voice</h2>
                 <div className="col-span-2 mt-4"><VoiceDropdown /></div>
-
-
               </div>
-
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
