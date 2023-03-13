@@ -1,11 +1,9 @@
 import "./App.css";
-import { Properties } from "./components/Properties";
 import { Navbar } from "./components/Navbar";
 import { Thread } from "./components/Thread";
 import { TextToSpeech } from "./components/TextToSpeech";
 import { Download } from "./components/Download";
 import { BackgroundSection } from "./components/BackgroundSection";
-import VoiceDropdown from "./components/VoiceDropdown";
 function App() {
 
   return (

@@ -9,3 +9,8 @@ declare interface Configuration {
   video: string;
 }
 
+declare interface Comments {
+  name: string;
+  src: string;
+}
+
