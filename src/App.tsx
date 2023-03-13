@@ -5,6 +5,7 @@ import { Thread } from "./components/Thread";
 import { TextToSpeech } from "./components/TextToSpeech";
 import { Download } from "./components/Download";
 import { BackgroundSection } from "./components/BackgroundSection";
+import { SettingsProvider } from "./components/SettingsContext";
 import VoiceDropdown from "./components/VoiceDropdown";
 function App() {
 
@@ -14,10 +15,12 @@ function App() {
         <Navbar />
       </div>
       <div className="flex flex-col space-y-10 z-10">
-        <Thread />
-        <TextToSpeech />
-        <BackgroundSection />
-        <Download />
+          <SettingsProvider>
+          <Thread />
+          <TextToSpeech />
+          <BackgroundSection />
+          <Download />
+          </SettingsProvider>
       </div>
     </div>
   );
