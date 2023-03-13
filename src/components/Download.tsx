@@ -1,4 +1,14 @@
+import {useContext} from "react";
+import {SettingsContext} from "./SettingsContext";
+
 function Download() {
+
+    const { settings} = useContext(SettingsContext);
+
+    const voice = settings.voiceId;
+
+    console.log(voice);
+
     return (
             <div className="container pb-10 mx-auto">
                 <div className="pt-10 text-white text-sm flex justify-center font-bold text-xl">

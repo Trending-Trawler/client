@@ -1,6 +1,7 @@
-import {Fragment, useEffect, useState} from 'react'
+import {Fragment, useEffect, useState, useContext} from 'react'
 import {Menu, Transition} from '@headlessui/react'
 import {ChevronDownIcon} from "@heroicons/react/20/solid"
+import { SettingsContext } from "./SettingsContext";
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -11,6 +12,7 @@ export default function VoiceDropdown() {
     const [selectedGender, setSelectedGender] = useState<string>("male");
     const [selectedLang, setSelectedLang] = useState<string>("American");
     const [selectedVoice, setSelectedVoice] = useState<string>("Mike");
+    const [voiceId, setVoiceId ] = useState<string>("en_us_009");
 
     useEffect(() => {
         fetch('https://api.trending-trawler.com/voices', {
@@ -21,6 +23,8 @@ export default function VoiceDropdown() {
             .then(data => setVoices(data))
             .catch(error => console.log(error))
     }, []);
+
+    const { settings, setSettings } = useContext(SettingsContext);
 
     return (
         <>
@@ -151,7 +155,12 @@ export default function VoiceDropdown() {
                                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                         'block px-4 py-2 text-sm'
                                                     )}
-                                                    onClick={() => setSelectedVoice(item.name)}
+                                                    onClick={() => {
+                                                        setSelectedVoice(item.name)
+                                                        setVoiceId(item.id)
+                                                        setSettings({...settings, voiceId: item.id || 'en_us_009'})
+                                                        console.log(voiceId)
+                                                    }}
                                                 >
                                                     {item.name}
                                                 </a>
