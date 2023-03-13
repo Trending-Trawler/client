@@ -158,7 +158,7 @@ export default function VoiceDropdown() {
                                                     onClick={() => {
                                                         setSelectedVoice(item.name)
                                                         setVoiceId(item.id)
-                                                        setSettings({...settings, voiceId: item.id || 'en_us_009'})
+                                                        setSettings({...settings, voiceId: item.id})
                                                         console.log(voiceId)
                                                     }}
                                                 >
