@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import useWebSocket from "react-use-websocket";
 import { SettingsContext } from "./SettingsContext";
+import "../loader.css"
 
 function Download() {
   const socketUrl = "ws://localhost:8000/video";
@@ -14,6 +15,10 @@ function Download() {
 
   const { sendMessage, lastMessage } = useWebSocket(socketUrl);
   function handleDownload() {
+    const element = document.getElementById("bttm");
+    element?.scrollIntoView();
+    document.getElementById("downloadBtn")?.classList.add("hidden");
+    document.getElementById("loader")?.classList.remove("hidden")
     sendMessage("download");
   }
 
@@ -28,6 +33,7 @@ function Download() {
     <div className="container pb-10 mx-auto">
       <div className="pt-10 text-white text-sm flex flex-col gap-4 justify-center font-bold text-xl">
         <button
+          id="downloadBtn"
           onClick={handleDownload}
           className="hover:bg-slate-500/40 active:bg-slate-500/40 bg-slate-50/40 border-white border-2 rounded-xl py-2 px-6 drop-shadow-xl"
         >
@@ -48,7 +54,18 @@ function Download() {
           hidden={video === null}
           controls
         />
+        <div id="loader" className="text-center hidden">
+          <svg className="pl m-auto" width="240" height="240" viewBox="0 0 240 240">
+            <circle className="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+            <circle className="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+            <circle className="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+            <circle className="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+          </svg>
+          <div className="text-2xl">Downloading video...</div>
+          <div>This process can take up to 5 minutes.</div>
+        </div>
       </div>
+      <div id="bttm"></div>
     </div>
   );
 }
