@@ -17,9 +17,11 @@ const defaultSettingsContext: SettingsContextType = {
 export const SettingsContext = createContext(defaultSettingsContext);
 
 export const SettingsProvider: React.FC<SettingsProviderProps> = ({
-                                                                    children,
-                                                                  }: SettingsProviderProps) => {
-  const [settings, setSettings] = useState<Record<string, unknown>>({voiceId: "en-us_009"});
+  children,
+}: SettingsProviderProps) => {
+  const [settings, setSettings] = useState<Record<string, unknown>>({
+    voiceId: "en_us_009",
+  });
 
   return (
     <SettingsContext.Provider value={{ settings, setSettings }}>
