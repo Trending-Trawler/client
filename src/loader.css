@@ -1,3 +1,5 @@
+/* loader */
+
 .pl {
     width: 6em;
     height: 6em;
@@ -201,4 +203,72 @@
       stroke-width: 20;
       stroke-dashoffset: -440;
     }
+  }
+
+  /* generating */
+
+  .generator {
+    padding:17px 40px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(255, 87, 0);
+    letter-spacing: 1px;
+    transition: all .3s ease;
+    box-shadow: rgb(204, 67, 0) 0px 10px 0px 0px;
+    color: hsl(0, 0%, 100%);
+   } #voicePre, #submitThr {
+    padding:10px 20px;
+   }
+   
+   .generator:hover {
+    box-shadow: rgb(204, 67, 0) 0px 7px 0px 0px;
+   }
+   
+   .generator:active {
+    background-color: rgb(255, 87, 0);
+    /*50, 168, 80*/
+    box-shadow: rgb(204, 67, 0) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+   }
+
+   /* thread input */
+
+   .input {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    position: relative;
+  }
+  
+  .input input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(255, 87, 0);
+    background-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+  }
+  
+  .input label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: white;
+  }
+  
+  .input :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: transparent;
+  }
+  
+  .inputGroup :is(input:focus, input:valid) {
+    border-color: rgb(37, 37, 211);
   }

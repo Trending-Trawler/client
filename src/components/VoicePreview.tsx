@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { SettingsContext } from "./SettingsContext";
+import "../loader.css"
 
 type AudioSource = string | null;
 
@@ -33,12 +34,11 @@ export default function VoicePreview() {
   return (
     <>
       <div className="flex flex-col items-center justify-center">
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={handlePlay}
-        >
-          Play
-        </button>
+        <div className="m-auto text-center">
+          <button id="voicePre" className="generator w-30 text-lg text-center" onClick={handlePlay}>
+            Play
+          </button>
+        </div>
       </div>
     </>
   );
