@@ -5,6 +5,8 @@ import { TextToSpeech } from "./components/TextToSpeech";
 import { Download } from "./components/Download";
 import { BackgroundSection } from "./components/BackgroundSection";
 import { SettingsProvider } from "./components/SettingsContext";
+import { StrombergQuotes } from "./components/Stromberg";
+
 function App() {
 
   return (
@@ -13,12 +15,13 @@ function App() {
         <Navbar />
       </div>
       <div className="flex flex-col space-y-10 z-10">
-          <SettingsProvider>
+        <SettingsProvider>
           <Thread />
           <TextToSpeech />
           <BackgroundSection />
           <Download />
-          </SettingsProvider>
+          <StrombergQuotes />
+        </SettingsProvider>
       </div>
     </div>
   );

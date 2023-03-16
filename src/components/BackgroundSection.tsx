@@ -8,7 +8,7 @@ function BackgroundSection() {
 
   async function fetchVideos() {
     try {
-      const response = await fetch("https://api.trending-trawler.com/videos/preview", {
+      const response = await fetch("http://localhost:8000/videos/preview", {
         method: "GET",
         mode: "cors"
       });
@@ -31,7 +31,6 @@ function BackgroundSection() {
       setVideos(updatedVideos);
 
       console.log("fetching videos successful");
-      console.log("videos:", videos);
     } catch (error) {
       console.error("Error fetching or extracting videos:", error);
       setVideos([
@@ -72,7 +71,6 @@ function BackgroundSection() {
   }
   }, []);
 
-  console.log("videos:", videos);
   return (
     <div className="flex flex-row items-center text-white">
       <div className="container rounded-lg pb-10 mx-auto backdrop-filter bg-slate-50/10 backdrop-blur-sm">

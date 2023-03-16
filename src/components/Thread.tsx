@@ -7,7 +7,7 @@ function Thread() {
 
   async function getComments() {
     try {
-      const response = await fetch("https://api.trending-trawler.com/comments?" + new URLSearchParams({thread_url: inputText}), {
+      const response = await fetch("http://localhost:8000/comments?" + new URLSearchParams({thread_url: inputText}), {
         method: "GET"
       });
 
@@ -28,7 +28,6 @@ function Thread() {
 
       setComments(imageUrls);
       console.log("fetching comments successful");
-      console.log("comments:", comments);
     } catch (error) {
       console.error("Error fetching or extracting comments:", error);
       setComments([
@@ -48,7 +47,6 @@ function Thread() {
     }
   }
 
-  console.log(comments);
   return (
     <>
       <div className="container rounded-lg pb-10 mx-auto backdrop-filter bg-slate-50/10 backdrop-blur-sm">

@@ -11,8 +11,6 @@ function Download() {
 
   const voice = settings.voiceId;
 
-  console.log(voice);
-
   const { sendMessage, lastMessage } = useWebSocket(socketUrl);
   function handleDownload() {
     const element = document.getElementById("bttm");
@@ -56,10 +54,10 @@ function Download() {
         />
         <div id="loader" className="text-center hidden">
           <svg className="pl m-auto" width="240" height="240" viewBox="0 0 240 240">
-            <circle className="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
-            <circle className="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
-            <circle className="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
-            <circle className="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+            <circle className="pl__ring pl__ring--a stroke-logo-orange" cx="120" cy="120" r="105" fill="none" stroke="#000" strokeWidth="20" strokeDasharray="0 660" strokeDashoffset="-330" strokeLinecap="round"></circle>
+            <circle className="pl__ring pl__ring--b stroke-logo-lightblue" cx="120" cy="120" r="35" fill="none" stroke="#000" strokeWidth="20" strokeDasharray="0 220" strokeDashoffset="-110" strokeLinecap="round"></circle>
+            <circle className="pl__ring pl__ring--c stroke-logo-purple" cx="85" cy="120" r="70" fill="none" stroke="#000" strokeWidth="20" strokeDasharray="0 440" strokeLinecap="round"></circle>
+            <circle className="pl__ring pl__ring--d stroke-logo-darkblue" cx="155" cy="120" r="70" fill="none" stroke="#000" strokeWidth="20" strokeDasharray="0 440" strokeLinecap="round"></circle>
           </svg>
           <div className="text-2xl">Downloading video...</div>
           <div>This process can take up to 5 minutes.</div>
