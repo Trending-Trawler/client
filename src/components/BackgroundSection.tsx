@@ -36,7 +36,7 @@ function BackgroundSection() {
       console.log("fetching videos successful");
     } catch (error) {
       document.getElementById("loader_video")?.classList.add("hidden")
-      setError("Error fetching or extracting comments");
+      setError("Error fetching or extracting videos");
 
       /*
       setVideos([
@@ -85,10 +85,11 @@ function BackgroundSection() {
         <div className="flex w-1/2 mx-auto">
 
           <GalleryView videos={videos} />
-          {error && (
-            <div className=" mx-auto font-bold text-red-500 pt-2">{error}</div>
-          )}
+
         </div>
+        {error && (
+          <div className=" mx-auto font-bold text-red-500 pt-2">{error}</div>
+        )}
         <div id="loader_video" className="text-center hidden">
           <svg className="pl mx-auto" width="240" height="240" viewBox="0 0 240 240">
             <circle className="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" strokeWidth="20" strokeDasharray="0 660" strokeDashoffset="-330" strokeLinecap="round"></circle>
