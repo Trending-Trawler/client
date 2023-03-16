@@ -77,22 +77,19 @@ function Thread() {
             <h1 className="text-2xl">Test it yourself</h1>
             <h2 className="text-xl">Enter a thread name</h2>
           </div>
-          <div className="w-2/4 scale-130 bg-slate-800/30 mt-5 rounded border border-white border-2 drop-shadow-xl">
-            <input
-              type="text"
+            <input 
+              type="text" 
+              name="text" 
+              className="inputThr focus:outline-none w-4/12 transition duration-250 focus:w-2/3 mt-2"
               placeholder="Thread Link"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              className="w-3/4 bg-transparent text-white text-sm py-0.5 px-1 rounded-sm placeholder-white/80 focus:outline-none"
             />
-            <button
-              type="submit"
-              className="text-white font-bold pl-3 "
-              onClick={getComments}
-            >
-              Submit
-            </button>
-          </div>
+            <div className="m-auto mt-4">
+              <button id="voicePre" className="generator w-30 text-lg font-bold text-center" onClick={getComments}>
+                Submit
+              </button>
+            </div>
           {error && (
             <div className="font-bold text-red-500 pt-2">{error}</div>
           )}

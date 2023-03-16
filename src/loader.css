@@ -234,41 +234,23 @@
 
    /* thread input */
 
-   .input {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 1em 0 1em 0;
-    position: relative;
-  }
-  
-  .input input {
-    font-size: 100%;
-    padding: 0.8em;
+   .inputThr {
+    font-weight: 500;
+    font-size: 14px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    border: none;
+    border-bottom: 1px solid transparent;
     outline: none;
-    border: 2px solid rgb(255, 87, 0);
-    background-color: transparent;
-    border-radius: 20px;
-    width: 100%;
+    background-color: rgba(255, 87, 0, 0.2);
+  }
+  ::placeholder {
+    color: black;
+    opacity: 1;
   }
   
-  .input label {
-    font-size: 100%;
-    position: absolute;
-    left: 0;
-    padding: 0.8em;
-    margin-left: 0.5em;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    color: white;
-  }
-  
-  .input :is(input:focus, input:valid)~label {
-    transform: translateY(-50%) scale(.9);
-    margin: 0em;
-    margin-left: 1.3em;
-    padding: 0.4em;
-    background-color: transparent;
-  }
-  
-  .inputGroup :is(input:focus, input:valid) {
-    border-color: rgb(37, 37, 211);
+  .inputThr:focus {
+    border-bottom: 3px solid rgb(255, 87, 0);
+    transition: 0.1s;
   }
