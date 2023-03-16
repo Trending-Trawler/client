@@ -64,7 +64,10 @@ export default function VoiceDropdown() {
                               : "text-gray-700",
                             "block px-4 py-2 text-sm"
                           )}
-                          onClick={() => setSelectedGender(key)}
+                          onClick={(event) => {
+                            event.preventDefault();
+                            setSelectedGender(key);
+                          }}
                         >
                           {key.charAt(0).toUpperCase() + key.slice(1)}
                         </a>
@@ -114,7 +117,10 @@ export default function VoiceDropdown() {
                                 : "text-gray-700",
                               "block px-4 py-2 text-sm"
                             )}
-                            onClick={() => setSelectedLang(key)}
+                            onClick={(event) => {
+                                event.preventDefault()
+                                setSelectedLang(key)}
+                          }
                           >
                             {key.charAt(0).toUpperCase() + key.slice(1)}
                           </a>
@@ -169,7 +175,8 @@ export default function VoiceDropdown() {
                                   : "text-gray-700",
                                 "block px-4 py-2 text-sm"
                               )}
-                              onClick={() => {
+                              onClick={(event) => {
+                                event.preventDefault();
                                 setSelectedVoice(item.name);
                                 setVoiceId(item.id);
                                 setSettings({ ...settings, voiceId: item.id });
