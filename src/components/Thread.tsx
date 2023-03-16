@@ -3,9 +3,20 @@ import JSZip from "jszip";
 
 function Thread() {
   const [inputText, setInputText] = useState("");
-  const [comments, setComments] = useState<Comments[]>([]);
+  let [comments, setComments] = useState<Comments[]>([]);
+  const [error, setError] = useState("");
 
   async function getComments() {
+    if (inputText === "") {
+      setError("Please enter a valid URL");
+      return;
+    }
+    if(error !==""){
+      setError("");
+    }
+    document.getElementById("loader_thread")?.classList.remove("hidden")
+
+
     try {
       const response = await fetch("http://localhost:8000/comments?" + new URLSearchParams({thread_url: inputText}), {
         method: "GET"
@@ -27,8 +38,18 @@ function Thread() {
       ).then((results:any[]) => results.filter((imageUrl) => imageUrl !== null))
 
       setComments(imageUrls);
+      document.getElementById("loader_thread")?.classList.add("hidden")
+
       console.log("fetching comments successful");
-    } catch (error) {
+    } catch (error: any) {
+      document.getElementById("loader_thread")?.classList.add("hidden")
+      if (error.response && error.response.status === 400) {
+        setError("Server error: Bad Gateway (502)");
+      } else {
+        setError("Error fetching or extracting comments");
+      }
+
+/*
       console.error("Error fetching or extracting comments:", error);
       setComments([
         {
@@ -44,6 +65,7 @@ function Thread() {
           src: "public/images/thread_comment_2.png"
         }
       ])
+ */
     }
   }
 
@@ -71,7 +93,19 @@ function Thread() {
               Submit
             </button>
           </div>
+          {error && (
+            <div className="font-bold text-red-500 pt-2">{error}</div>
+          )}
           <div className="flex-row mx-auto " >
+            <div id="loader_thread" className="text-center hidden mt-10">
+              <svg className="pl m-auto" width="240" height="240" viewBox="0 0 240 240">
+                <circle className="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" strokeWidth="20" strokeDasharray="0 660" strokeDashoffset="-330" strokeLinecap="round"></circle>
+                <circle className="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" strokeWidth="20" strokeDasharray="0 220" strokeDashoffset="-110" strokeLinecap="round"></circle>
+                <circle className="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" strokeWidth="20" strokeDasharray="0 440" strokeLinecap="round"></circle>
+                <circle className="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" strokeWidth="20" strokeDasharray="0 440" strokeLinecap="round"></circle>
+              </svg>
+              <div className="text-2xl">Fetching Reddit...</div>
+            </div>
             <div className="w-2/3 container mx-auto py-3">
               {comments.length > 0 && (
                 <div key={0} className="pt-4">
