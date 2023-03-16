@@ -30,6 +30,10 @@ export default function VoicePreview() {
       audio.play();
     } else {
       getPreview();
+      if (audioSrc) {
+        const audio = new Audio(audioSrc);
+        audio.play();
+      }
     }
   }
 
