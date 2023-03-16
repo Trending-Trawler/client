@@ -71,6 +71,7 @@ function GalleryView({ videos }: GalleryViewProps) {
         slidesPerView={3}
         initialSlide={1}
         loop={true}
+        allowTouchMove={false}
         coverflowEffect={{
           rotate: -10,
           depth: 200
