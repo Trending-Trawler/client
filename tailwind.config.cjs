@@ -11,11 +11,7 @@ module.exports = {
         '9/16': '9 / 16',
       },
       colors: {
-        'btn-orange': '#FF8447',
-        'logo-purple': '#582d90',
-        'logo-lightblue': '#61beea',
-        'logo-darkblue': '#0f3675',
-        'logo-orange': '#ff5700',
+        'btn-orange': '#FF8447'
       },
     },
   },
