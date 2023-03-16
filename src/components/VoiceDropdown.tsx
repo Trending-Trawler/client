@@ -14,6 +14,8 @@ export default function VoiceDropdown() {
   const [selectedVoice, setSelectedVoice] = useState<string>("Mike");
   const [voiceId, setVoiceId] = useState<string>("en_us_009");
 
+  const { settings, setSettings } = useContext(SettingsContext);
+
   useEffect(() => {
     fetch("http://localhost:8000/voices", {
       method: "GET",
@@ -24,7 +26,6 @@ export default function VoiceDropdown() {
       .catch((error) => console.log(error));
   }, []);
 
-  const { settings, setSettings } = useContext(SettingsContext);
 
   return (
     <>
