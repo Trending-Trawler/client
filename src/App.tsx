@@ -8,13 +8,12 @@ import { SettingsProvider } from "./components/SettingsContext";
 import { StrombergQuotes } from "./components/Stromberg";
 
 function App() {
-
   return (
-    <div className="bg-gradient-to-b from-blue-800 to-pink-400 bg-repeat-y">
-      <div className="sticky top-0 z-50 backdrop-filter bg-cyan-800/10 backdrop-blur-sm transition-all duration-500">
+    <div className="relative bg-gradient-to-b from-page-bg to-black">
+      <div className="sticky top-0 z-50 backdrop-filter backdrop-blur-sm">
         <Navbar />
       </div>
-      <div className="flex flex-col space-y-10 z-10">
+      <div className="flex flex-col space-y-10 z-40">
         <SettingsProvider>
           <Thread />
           <TextToSpeech />
