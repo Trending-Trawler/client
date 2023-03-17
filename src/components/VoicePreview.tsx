@@ -11,7 +11,7 @@ export default function VoicePreview() {
   async function handlePlay(): Promise<void> {
     try {
       const response = await fetch(
-          "http://localhost:8000/voice/preview?text=This%20is%20the%20voice%20you%20selected%20to%20read%20your%20video&" +
+          "https://api.trending-trawler.com/voice/preview?text=This%20is%20the%20voice%20you%20selected%20to%20read%20your%20video&" +
           new URLSearchParams({ voice_id: String(settings.voiceId) }),
           {
             method: "GET",

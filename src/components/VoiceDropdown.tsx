@@ -17,7 +17,7 @@ export default function VoiceDropdown() {
   const { settings, setSettings } = useContext(SettingsContext);
 
   useEffect(() => {
-    fetch("http://localhost:8000/voices", {
+    fetch("https://api.trending-trawler.com/voices", {
       method: "GET",
       mode: "cors",
     })

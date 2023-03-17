@@ -11,7 +11,7 @@ function BackgroundSection() {
     document.getElementById("loader_video")?.classList.remove("hidden");
 
     try {
-      const response = await fetch("http://localhost:8000/videos/preview", {
+      const response = await fetch("https://api.trending-trawler.com/videos/preview", {
         method: "GET",
         mode: "cors"
       });

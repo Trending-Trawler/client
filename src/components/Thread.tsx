@@ -18,13 +18,12 @@ function Thread() {
 
 
     try {
-      const response = await fetch("http://localhost:8000/comments?" + new URLSearchParams({ thread_url: inputText }), {
+      const response = await fetch("https://api.trending-trawler.com/comments?" + new URLSearchParams({ thread_url: inputText }), {
         method: "GET"
       });
 
       const arrayBuffer = await response.arrayBuffer();
       const zip = await JSZip.loadAsync(arrayBuffer);
-
       const imageUrls = await Promise.all(
         Object.keys(zip.files).map(async (filename) => {
           const file = zip.files[filename];

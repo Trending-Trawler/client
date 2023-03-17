@@ -4,7 +4,7 @@ import { SettingsContext } from "./SettingsContext";
 import "../loader.css";
 
 function Download() {
-  const socketUrl = "ws://localhost:8000/video";
+  const socketUrl = "ws://api.trending-trawler.com//video";
   const [video, setVideo] = useState<Blob | null>(null);
 
   const { settings } = useContext(SettingsContext);
